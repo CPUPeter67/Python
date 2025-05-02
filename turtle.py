@@ -1,8 +1,8 @@
 import turtle
 
-turtle.Screen().bgcolor("orange")
+turtle.Screen().bgcolor("Orange")
 
 sc = turtle.Screen()
 sc.setup(400, 300)
 
-turtle.title("Welcome to the Turtle World")
+turtle.title("Welcome to the Turtle Window")
