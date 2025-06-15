@@ -10,8 +10,8 @@ def start_game():
     print("Hey there! Welcome to the Guess The Number game!")
     player_name = input ("Please enter your name.")
     wanna_play = input("Hi, {}, would you like to play? (Yes/No) ".format(player_name))
-    ## Where the show_score function used to be
-    Attempts = 0
+    ## Where the show_score function USED to be
+    attempts = 0
     show_score()
     while wanna_play.lower() == "yes":
         try:
