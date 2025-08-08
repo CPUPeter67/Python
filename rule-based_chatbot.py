@@ -50,4 +50,34 @@ def packing_tips():
 
     print(Fore.GREEN + f"TravelBot: Packing tips for {days} days in {location}:")
     print(Fore.GREEN + "- Pack versatile clothes.")
-    print(Fore.GREEN + "- Bring chargers/AC adapters.")                    
+    print(Fore.GREEN + "- Bring chargers/AC adapters.") 
+
+# Provide places to eat based on user's location
+def food_recommendations():
+    print(Fore.CYAN + "TravelBot: Where are you located?")
+    location = normalize_input(input(Fore.YELLOW + "You: "))
+    print(Fore.CYAN + "TravelBot: What food do you like?")
+    food = normalize_input(input(Fore.YELLOW + "You: "))
+
+    print(Fore.GREEN + f"TravelBot: In {location}, you can try {food} at these places:")
+    print(Fore.GREEN + "- Local restaurants")
+    print(Fore.GREEN + "- Food trucks")
+    print(Fore.GREEN + "- Street vendors")
+    print(Fore.GREEN + "- Order online")
+
+# Provide updates on the rules and regulations of a destination
+def rules_and_regulations():
+    print(Fore.CYAN + "TravelBot: What destination are you interested in?")
+    destinations = normalize_input(input(Fore.YELLOW + "You: "))
+    print(Fore.CYAN + "TravelBot: What rules do you want to know about?")
+    rules = normalize_input (input(Fore.YELLOW + "You: "))
+    
+    print(Fore.GREEN + f"TravelBot: Here are the rules for {destinations} regarding {rules}:")
+    print(Fore.GREEN + "-Always carry your ID.")
+    print(Fore.GREEN + "-Respect the local rules.")
+    print(Fore.GREEN + "-Do not litter.")
+
+
+
+
+    
