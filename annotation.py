@@ -59,7 +59,7 @@ plt.figure(figsize=(12, 8))
 plt.imshow(image_rgb)
 plt.title('Annotated Image With Regions, Centers, and Bi-Directional Height Arrow')
 plt.axis('off')
-plt.show()
+plt.show() 
 
 
 
