@@ -79,6 +79,25 @@ def interactive_edge_detection(image_path):
 # Provide the path to an image for the activity
 interactive_edge_detection('Anothermustang.avif')
 
+def upload_image():
+    """Allows the user to upload an image file."""
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+
+    file_path = filedialog.askopenfilename(
+        title="Select Image File",
+        filetypes=[("Image files", "*.png;*.jpg;*.jpeg;*.gif;*.bmp")]
+    )
+
+    if file_path:
+        interactive_edge_detection(file_path)
+    else:
+        print("No image selected.")
+
+# Start the image upload process
+if __name__ == "__main__":
+    upload_image()
+
 
 
             
