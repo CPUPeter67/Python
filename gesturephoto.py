@@ -66,7 +66,37 @@ while True:
             middle_tip = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_TIP]
             ring_tip = hand_landmarks.landmark[mp_hands.HandLandmark.RING_FINGER_TIP]
             pinky_tip = hand_landmarks.landmark[mp_hands.HandLandmark.PINKY_FINGER_TIP]
-            
+
+            # Frame dimensions
+            frame_height, frame_width, _ = img.shape
+
+            # Convert normalized coordinates to pixel coordinates
+            thumb_tip_x, thumb_tip_y = int(thumb_tip.x * frame_width), int(thumb_tip.y * frame_height)
+            index_tip_x, index_tip_y = int(index_tip.x * frame_width), int(index_tip.y * frame_height)
+            middle_tip_x, middle_tip_y = int(middle_tip.x * frame_width), int(middle_tip.y * frame_height)
+            ring_tip_x, ring_tip_y = int(ring_tip.x * frame_width), int(ring_tip.y * frame_height)
+            pinky_tip_x, pinky_tip_y = int(pinky_tip.x * frame_width), int(pinky_tip.y * frame_height)
+
+            # Draw circles for landmarks
+            cv2.circle(img, (thumb_tip_x, thumb_tip_y), 10, (255, 0, 0), cv2.FILLED)
+            cv2.circle(img, (index_tip_x, index_tip_y), 10, (0, 255, 0), cv2.FILLED)
+            cv2.circle(img, (middle_tip_x, middle_tip_y), 10, (0, 0, 255), cv2.FILLED)
+            cv2.circle(img, (ring_tip_x, ring_tip_y), 10, (255, 255, 0), cv2.FILLED)
+            cv2.circle(img, (pinky_tip_x, pinky_tip_y), 10, (255, 0, 255), cv2.FILLED)
+
+            # Gesture logic
+            current_time = time.time()
+
+            # Click picture: Thumb touches Index finger
+            if abs (thumb_x - index_x) < 30 and abs (thumb_y - index_y) < 30:
+              if (current_time ,last_action_time) > debounce_time:
+                cv2.putText(img, "Picture Captured!", (50, 50),
+cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                last_action_time = current_time
+                cv2.imwrite(f"picture_{int(time.time())}.jpg", img)
+                print("Picture saved!")
+# Change filter: Thumb touches any other finger
+elif (abs (thumb_x, middle_x))
 
             
 
